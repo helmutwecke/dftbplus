@@ -11,14 +11,14 @@
 Module bulkpot
   
  use dftbp_accuracy, only : dp
- use dftbp_constants
+ use dftbp_constants, only : Bohr__AA
  use dftbp_globalenv, only : stdOut
  use dftbp_message, only : warning
- use gallocation
- use parameters
- use structure
- use mpi_poisson
- use gewald
+ use gallocation, only : log_gallocate, log_gdeallocate
+ use parameters, only : deltaR_max, ncont, poissacc, readbulk, contdir, iatc, overrbulkbc, dmin
+ use structure, only : period, izp, x, dqmat, period_dir, uhubb, lmax
+ use mpi_poisson, only : id0
+ use gewald, only : getalpha, rezvol, long_pot, short_pot
 
  implicit none
 

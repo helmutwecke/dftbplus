@@ -11,8 +11,17 @@
 module poisson
 
   use dftbp_constants, only : pi, hartree__eV, Bohr__AA
-  use gallocation
-  use parameters
+  use gallocation, only : log_gallocate, log_gdeallocate, writePoissMemInfo, writePoissPeakInfo
+  use parameters, only : MAXNCONT, PoissBox, base_atom1, base_atom2, bias_dEf, biasdir, bufferBox,&
+      & cluster, cntr_cont, cntr_gate, contdir, delta, deltaR_max, dmin, do_renorm, DoCilGate,&
+      & DoGate, DoPoisson, DOS, DoTip, dR_cont, dr_eps, Efermi, eps_r, etb, fictcont, fixed_renorm,&
+      & FoundBox, gate, gatedir, GateLength_l, GateLength_t, iatc, iatm, init_defaults, InitPot,&
+      & LmbMax, localBC, maxiter, maxpoissiter, mbound_end, mixed, mu, ncdim, ncont, nf, ni,&
+      & overrBulkBC, overrideBC, OxLength, PoissAcc, poissBC, PoissBounds, PoissPlane, R_cont,&
+      & racc, ReadBulk, Readold, Rmin_Gate, Rmin_Ins, SaveHS, SaveNNList, SavePOT, scratchfolder,&
+      & set_accuracy, set_builtin, set_cluster, set_cont_indeces, set_contdir, set_dopoisson,&
+      & set_fermi, set_mol_indeces, set_ncont, set_poissonbox, set_poissongrid, set_potentials,&
+      & set_scratch, set_temperature, set_verbose, telec, temp, tip_atom, tipbias, verbose, x0, y0, z0
   use structure
   use parcheck
   use gewald
